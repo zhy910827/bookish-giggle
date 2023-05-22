@@ -74,12 +74,6 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: Add hello world
-      run: |
-        rm -rf package/helloworld
-        git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
-        git -C package/helloworld pull
-
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
